@@ -56,6 +56,24 @@ function mutateDeeply() {
 
 ```
 
+```vue [Dom]
+<script setup>
+import { onMounted, ref } from 'vue'
+
+const pRef = ref(null)
+
+onMounted(() => {
+  console.log('onMounted', pRef.value)
+})
+
+</script>
+
+<template>
+  <p ref="pRef"></p>
+</template>
+
+```
+
 
 ``` ts [Type]
 
