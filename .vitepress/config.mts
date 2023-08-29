@@ -43,6 +43,33 @@ export default defineConfig({
             }
           ]
         },
+        {
+          text: 'Vite',
+          link: '',
+          items: [
+            {
+              text: '', link: ''
+            }
+          ]
+        },
+        {
+          text: 'Pinia',
+          link: '',
+          items: [
+            {
+              text: '', link: ''
+            }
+          ]
+        },
+        {
+          text: 'VueUse',
+          link: '',
+          items: [
+            {
+              text: '', link: ''
+            }
+          ]
+        }
       ]
     },
 
