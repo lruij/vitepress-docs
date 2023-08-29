@@ -76,7 +76,7 @@ const update = () => {
   // Parent onBeforeUpdate
   // ChildComp onBeforeUpdate
   // ChildComp onUpdated
-  // Parent onUpdate
+  // Parent onUpdated
 
   <button @click="isShow = false">unmounted</button>
   // Parent onBeforeUnmount
@@ -124,7 +124,7 @@ onBeforeUpdate(() => {
 })
 
 onUpdated(() => {
-  console.log('Parent onUpdate')
+  console.log('Parent onUpdated')
 })
 
 onBeforeUnmount(() => {
