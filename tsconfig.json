@@ -11,8 +11,19 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
-            "@theme/*": [".vitepress/theme/*"]
+            "@theme/*": [
+                ".vitepress/theme/*"
+            ]
         }
     },
-    "include": ["env.d.ts", "posts/**/*", ".vitepress/**/*"]
+    "include": [
+        "posts",
+        ".vitepress/components/*.vue",
+        ".vitepress/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.md",
+        "**/dist"
+    ]
 }

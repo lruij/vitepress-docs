@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'node:path'
+import { MarkdownTransform } from './plugins/markdownTransform'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -29,44 +32,35 @@ export default defineConfig({
     sidebar: {
       '/vue/': [
         {
-          text: 'Composition API',
+          text: 'Vue',
           link: '/vue/',
           items: [
             {
-              text: 'Reactivity API', link: '/vue/reactivity-api/'
+              text: 'Lifecycle', link: '/vue/lifecycle/'
             },
             {
-              text: 'Lifecycle Hooks', link: '/vue/lifecycle-hooks/'
+              text: 'Reactivity', link: '/vue/reactivity/'
             },
             {
-              text: 'Dependency Injection', link: '/vue/dependency-injection/'
-            }
-          ]
-        },
-        {
-          text: 'Vite',
-          link: '',
-          items: [
+              text: 'Injection', link: '/vue/injection/'
+            },
             {
-              text: '', link: ''
-            }
-          ]
-        },
-        {
-          text: 'Pinia',
-          link: '',
-          items: [
+              text: 'Directives', link: '/vue/directives/'
+            },
             {
-              text: '', link: ''
-            }
-          ]
-        },
-        {
-          text: 'VueUse',
-          link: '',
-          items: [
+              text: 'Composables', link: '/vue/composables/'
+            },
             {
-              text: '', link: ''
+              text: 'Plugins', link: '/vue/plugins/'
+            },
+            {
+              text: 'State', link: '/vue/state/'
+            },
+            {
+              text: 'Route', link: '/vue/route/'
+            },
+            {
+              text: 'Test', link: '/vue/test/'
             }
           ]
         }
@@ -80,5 +74,16 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: `Copyright © 2017-${new Date().getFullYear()} LuffyFE`
     },
+  },
+  vite: {
+    plugins: [
+      MarkdownTransform(),
+      Components({
+        dirs: resolve(__dirname, './theme/components'),
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        dts: './components.d.ts',
+        transformer: 'vue3',
+      })
+    ]
   }
 })

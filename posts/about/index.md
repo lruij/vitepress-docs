@@ -34,20 +34,3 @@ Developed using [VitePress](https://vitepress.dev/), the code is hosted on GitHu
 
 Email: 1012232443@qq.com
 
-<VPTeamMembers size="small" :members="members" />
-
-<script setup>
-import { VPTeamMembers } from 'vitepress/theme'
-
-const members = [
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/17046447?v=4',
-    name: 'Jerry',
-    title: 'SDE',
-    links: [
-      { icon: 'github', link: 'https://github.com/lruij' }
-    ]
-  },
-
-]
-</script>
