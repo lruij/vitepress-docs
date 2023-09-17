@@ -20,7 +20,7 @@ Plugins are self-contained code that usually add app-level functionality to Vue.
 
 ::: code-group
 
-<<< ./demo/index.vue
+<<< ./demo/Index.vue
 
 <<< ./demo/app.js
 
