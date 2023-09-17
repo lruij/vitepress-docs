@@ -5,9 +5,13 @@ In the context of Vue applications, a "composable" is a function that leverages 
 The composables function name is starts with the `use` prefix
 
 ## Demo
-
 <script setup>
-  import Demo from './demo/Index.vue'
+  import { defineClientComponent } from 'vitepress'
+
+  const Demo = defineClientComponent(() => {
+    return import('./demo/Index.vue')
+  })
+
 </script>
 <DemoContainer>
   <Demo />

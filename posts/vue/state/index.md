@@ -5,11 +5,17 @@ Multiple components share a common state by [Pinia](https://pinia.vuejs.org/)
 ## Demo
 
 <script setup>
-import Demo from './demo/Index.vue'
+  import { defineClientComponent } from 'vitepress'
+
+  const Demo = defineClientComponent(() => {
+    return import('./demo/Index.vue')
+  })
+
 </script>
 <DemoContainer>
-  <Demo/>
+  <Demo />
 </DemoContainer>
+
 
 ## Usage
 

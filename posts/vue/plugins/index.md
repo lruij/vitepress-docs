@@ -4,9 +4,13 @@ Plugins are self-contained code that usually add app-level functionality to Vue.
 
 ## Demo
 
-
 <script setup>
-import Demo from './demo/Index.vue'
+  import { defineClientComponent } from 'vitepress'
+
+  const Demo = defineClientComponent(() => {
+    return import('./demo/Index.vue')
+  })
+
 </script>
 <DemoContainer>
   <Demo />

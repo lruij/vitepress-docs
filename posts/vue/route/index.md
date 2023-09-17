@@ -9,11 +9,15 @@ It's recommended to use the officially-supported [Vue Router library](https://ro
 ## Demo
 
 <script setup>
-  import Demo from './demo/Index.vue'
-</script>
+  import { defineClientComponent } from 'vitepress'
 
+  const Demo = defineClientComponent(() => {
+    return import('./demo/Index.vue')
+  })
+
+</script>
 <DemoContainer>
-  <Demo/>
+  <Demo />
 </DemoContainer>
 
 ## Usage
